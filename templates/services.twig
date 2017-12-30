@@ -1,0 +1,78 @@
+{% extends"app.twig" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">Services</div>
+                <div class="panel-body">
+                    <form action="{{ path_for('services') }}" method="post" autocomplete="off">
+                        <div class="form-group{{ errors.name ? ' has-error' : '' }}">
+                            <label for="name">Name of service</label>
+                            <input
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    placeholder="Service name"
+                                    class="form-control"
+                                    value="{{ oldInputs.name }}"
+                            >
+
+                            {%  if errors.name %}
+                                <span class="help-block">{{ errors.name | first }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="form-group{{ errors.description ? ' has-error' : '' }}">
+                            <label for="name">Description</label>
+                            <input
+                                    type="text"
+                                    name="description"
+                                    id="description"
+                                    placeholder="Description"
+                                    class="form-control"
+                                    value="{{ oldInputs.description }}"
+                            >
+
+                            {%  if errors.description %}
+                                <span class="help-block">{{ errors.description | first }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="form-group{{ errors.price ? ' has-error' : '' }}">
+                            <label for="name">Price</label>
+                            <input
+                                    type="text"
+                                    name="price"
+                                    id="price"
+                                    placeholder="Numeric price"
+                                    class="form-control"
+                                    value="{{ oldInputs.price }}"
+                            >
+
+                            {%  if errors.price %}
+                                <span class="help-block">{{ errors.price | first }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="form-group{{ errors.currency ? ' has-error' : '' }}">
+                            <label for="name">Currecy</label>
+                            <input
+                                    type="text"
+                                    name="currency"
+                                    id="currency"
+                                    placeholder="Currency"
+                                    class="form-control"
+                                    value="{{ oldInputs.currency }}"
+                            >
+
+                            {%  if errors.currency %}
+                                <span class="help-block">{{ errors.currency | first }}</span>
+                            {% endif %}
+                        </div>
+                        <button type="submit" class="btn btn-default">Save</button>
+
+                        {{ csrf.field | raw }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

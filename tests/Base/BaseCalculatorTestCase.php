@@ -20,8 +20,8 @@ abstract class BaseCalculatorTestCase extends \PHPUnit_Framework_TestCase
      */
     public function runApp($requestMethod, $requestUri, $requestData = null)
     {
-        /** @var \Calculator\CalculatorApp $app */
-        $calculator = new \Calculator\CalculatorApp(null);
+        /** @var \Calculator\AeroTransfersApp $app */
+        $calculator = new \Calculator\AeroTransfersApp(null);
         $app = $calculator->getApp();
 
         // Create a mock environment for testing with

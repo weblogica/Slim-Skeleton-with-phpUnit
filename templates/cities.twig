@@ -1,0 +1,33 @@
+{% extends"app.twig" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">Cities</div>
+                <div class="panel-body">
+                    <form action="{{ path_for('cities') }}" method="post" autocomplete="off">
+                        <div class="form-group{{ errors.name ? ' has-error' : '' }}">
+                            <label for="name">City</label>
+                            <input
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    placeholder="City name"
+                                    class="form-control"
+                                    value="{{ oldInputs.name }}"
+                            >
+
+                            {%  if errors.name %}
+                                <span class="help-block">{{ errors.name | first }}</span>
+                            {% endif %}
+                        </div>
+                        <button type="submit" class="btn btn-default">Save</button>
+
+                        {{ csrf.field | raw }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

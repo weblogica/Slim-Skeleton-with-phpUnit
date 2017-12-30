@@ -8,7 +8,7 @@
 
 namespace Tests\Functional;
 
-use Calculator\CalculatorApp;
+use App\AeroTransfers\AeroTransfersApp;
 use Tests\Base\BaseCalculatorTestCase;
 
 class MathTests extends BaseCalculatorTestCase
@@ -18,7 +18,7 @@ class MathTests extends BaseCalculatorTestCase
 
     public function setUp()
     {
-        $this->app = (new CalculatorApp(null))->getApp();
+        $this->app = (new AeroTransfersApp(null))->getApp();
     }
 
     public function testTodoGet() {

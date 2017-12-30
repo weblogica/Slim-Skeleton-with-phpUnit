@@ -8,7 +8,7 @@
 
 namespace Tests\Functional;
 
-use Calculator\CalculatorApp;
+use Calculator\AeroTransfersApp;
 use Calculator\SlimTest\Domain\Text\Text;
 use Tests\Base\BaseCalculatorTestCase;
 
@@ -19,7 +19,7 @@ class TextTests extends BaseCalculatorTestCase
 
     public function setUp()
     {
-        $this->app = (new CalculatorApp(null))->getApp();
+        $this->app = (new AeroTransfersApp(null))->getApp();
     }
 
     public function testTodoGet() {
@@ -91,6 +91,6 @@ class TextTests extends BaseCalculatorTestCase
         $response = $text->saluda($request, $response, []);
 
         $this->assertSame($response->getStatusCode(), 200);
-        $this->assertEquals("Hello World", $response->getBody());
+        $this->assertContains("Hello World", (string)$response->getBody());
     }
 }
