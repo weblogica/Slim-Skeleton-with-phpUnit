@@ -1,11 +1,12 @@
-{% extends"app.twig" %}
+{% extends"admin/blank.twig" %}
 {% block content %}
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">Services</div>
-                <div class="panel-body">
-                    <form action="{{ path_for('services') }}" method="post" autocomplete="off">
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-address-book"></i> Services Maintenance
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                    <form action="{{ path_for('admin.services') }}" method="post" autocomplete="off">
                         <div class="form-group{{ errors.name ? ' has-error' : '' }}">
                             <label for="name">Name of service</label>
                             <input
@@ -71,7 +72,6 @@
                         {{ csrf.field | raw }}
 
                     </form>
-                </div>
             </div>
         </div>
     </div>

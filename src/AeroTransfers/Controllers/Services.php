@@ -42,7 +42,7 @@ class Services extends BaseController
         ]);
 
         if ($validation->failed()) {
-            return $response->withRedirect($this->router->pathFor("services"));
+            return $response->withRedirect($this->router->pathFor("admin.services"));
         }
 
         ServicesModel::create([

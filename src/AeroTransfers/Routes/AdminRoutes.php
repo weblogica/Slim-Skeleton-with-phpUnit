@@ -11,6 +11,8 @@ namespace AeroTransfers\Routes;
 use Slim\App;
 use AeroTransfers\Controllers\Cities;
 use AeroTransfers\Controllers\Services;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
 class AdminRoutes
 {
@@ -22,7 +24,7 @@ class AdminRoutes
             function (Request $request, Response $response, $args) {
                 return $response;
             }
-        )->setName("cities");
+        )->setName("admin.cities");
 
         $app->post(
             '/admin/cities',
@@ -38,7 +40,7 @@ class AdminRoutes
             function (Request $request, Response $response, $args) {
                 return $response;
             }
-        )->setName("services");
+        )->setName("admin.services");
 
         $app->post(
             '/admin/services',

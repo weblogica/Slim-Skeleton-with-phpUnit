@@ -39,7 +39,7 @@ class Cities extends BaseController
         ]);
 
         if ($validation->failed()) {
-            return $response->withRedirect($this->router->pathFor("cities"));
+            return $response->withRedirect($this->router->pathFor("admin.cities"));
         }
 
         CitiesModel::create([

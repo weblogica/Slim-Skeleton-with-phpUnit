@@ -10,6 +10,8 @@ namespace AeroTransfers\Routes;
 
 use Slim\App;
 use AeroTransfers\Controllers\Users;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
 class AuthRoutes
 {

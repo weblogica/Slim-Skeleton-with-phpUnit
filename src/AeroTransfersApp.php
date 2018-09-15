@@ -67,7 +67,8 @@ class AeroTransfersApp
                 );
 
                 return $response;
-            })->setName("home");
+            }
+        )->setName("home");
     }
 
     /**
@@ -85,10 +86,10 @@ class AeroTransfersApp
         $app->add(new \Slim\HttpCache\Cache('public', 0));
 
         // CSRF MiddleWare ( Cross-site request forgery )
-        $container['csrf'] = function (\Slim\Container $container) {
+        /*$container['csrf'] = function (\Slim\Container $container) {
             return new \Slim\Csrf\Guard($container);
         };
-        $app->add(new \AeroTransfers\Middleware\CsrfViewMiddleware($container));
+        $app->add(new \AeroTransfers\Middleware\CsrfViewMiddleware($container));*/
 
         // AeroTransfers Middleware
         $app->add(new \AeroTransfers\Middleware\ValidationErrorsMiddleware($container));
